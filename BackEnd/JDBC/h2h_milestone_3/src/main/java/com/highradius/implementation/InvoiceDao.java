@@ -1,11 +1,12 @@
 package com.highradius.implementation;
+
 import java.util.List;
 
 import com.highradius.model.Invoice;
 
 public interface InvoiceDao {
-	public void insertInvoice(Invoice i);
-	public void updateInvoice(int customerOrderID, Invoice i);
-	public void deleteInvoice(int customerOrderID);
-	public List<Invoice> getAllInvoices();
+	public List<Invoice> getInvoice(int start,int limit) throws ClassNotFoundException;
+	public int insertInvoice(Invoice ob) throws ClassNotFoundException;
+	public int updateInvoice(int id,Invoice ob) throws ClassNotFoundException;
+	public int deleteInvoice(int id) throws ClassNotFoundException;
 }
